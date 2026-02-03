@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Feedback Form</title>
+</head>
+<body>
+    <h2 style="text-align: center; color: #940b0b;font-size: 40px;" >Mumbai Transport – Citizen Feedback Form</h2>
+    <form style="font-size: 25px; color: #333333; max-width: 600px; margin: auto;">
+        <b>Name:</b><br>
+        <input type="text" name="name" style="width: 100%; padding: 10px; margin: 8px 0;font-size: 25px;"><br>
+
+        <b>Contact number:</b><br>
+        <input type="tel"  name="contact" style="width: 100%; padding: 10px; margin: 8px 0;font-size: 25px;"><br>
+
+        <b>Select Route:</b><br>
+        <select name="route" required style="width: 100%; padding: 10px; margin: 8px 0;font-size: 25px;">
+                <option value="">-- Select Route --</option>
+                <option value="csmt-panvel">CSMT to Panvel (Local Train)</option>
+                <option value="csmt-goregaon">CSMT to Goregaon (Local Train)</option>
+                <option value="csmt-thane">CSMT to Thane (Local Train)</option>
+            </select>
+        <b>Feedback:</b><br>
+        <textarea id="feedback" name="feedback" rows="4" style="width: 100%; padding: 10px; margin: 8px 0;font-size: 25px;"></textarea><br>
+
+        <input type="submit" value="Submit" style="background-color: #940b0b; color: white; padding: 20px 20px; border: none; cursor: pointer;font-size: 30px;">
+    </form>
+</body>
+</html>
