@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Fare Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2 class="page-title">Ticket Fare Calculator</h2>
+
+    <div class="card">
+        <label>Enter Number of Stops:</label><br><br>
+
+        <input type="number" id="stops" class="form-control">
+
+        <button class="btn-primary" onclick="calculateFare()">
+            Calculate Fare
+        </button>
+
+        <p id="result" style="margin-top:20px;"></p>
+    </div>
+
+    <script>
+        function calculateFare() {
+            var stops = document.getElementById("stops").value;
+            var fare = stops * 5;
+
+            document.getElementById("result").innerHTML =
+                "Total Fare: ₹" + fare;
+        }
+    </script>
+
+</body>
+</html>

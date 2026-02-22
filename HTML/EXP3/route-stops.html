@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Stops</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h3 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        h4 {
+            color: #dfdddd;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        dl {
+            margin-top: 20px;
+        }
+        dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        dd {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Route 98001 (Harbour Line)</h3>
+
+    <button onclick="showDelay()" style="font-size:20px; background-color: #ff4d4d;">Check Delay Status</button>
+    <p id="delayMessage"></p>
+
+    <!-- Task 9 -->
+    <script>
+        function showDelay() {
+            document.getElementById("delayMessage").innerHTML =
+            "Train is delayed by 15 minutes.";
+        }
+    </script>
+
+
+    <!-- Task 6 -->
+    <h4>Bus Stops </h4>
+    <ul id="stopList"></ul>
+
+    <script>
+    var stops = [
+        "CSMT",
+        "Wadala Road",
+        "Kurla",
+        "Mankhurd",
+        "Vashi",
+        "Nerul",
+        "Belapur CBD",
+        "Panvel"
+    ];
+
+    var list = document.getElementById("stopList");
+
+    for (var i = 0; i < stops.length; i++) {
+        list.innerHTML += "<li>" + stops[i] + "</li>";
+    }
+    </script>
+
+
+<!-- Task 7 -->
+    <h4>Search Bus Stop</h4>
+    <input type="text" id="searchStop" placeholder="Enter stop name" style="font-size: 25px;">
+    <button onclick="searchStop()" style="font-size: 25px; background-color: #ff4d4d;">Search</button>
+    <p id="searchResult"></p>
+
+    <script>
+    function searchStop() {
+        var input = document.getElementById("searchStop").value;
+        var found = false;
+
+        for (var i = 0; i < stops.length; i++) {
+             if (stops[i].toLowerCase() === input.toLowerCase()) {
+            found = true;
+            break;
+            }
+        }
+
+        if (found) {
+        document.getElementById("searchResult").innerHTML =
+            "Stop Found!";
+        } else {
+        document.getElementById("searchResult").innerHTML =
+            "Stop Not Found!";
+    }
+}
+</script>
+
+
+
+    <h4>Stop Details</h4>
+    <dl>
+        <dt><b>CSMT</b></dt>
+        <dd>Historic terminus and major railway hub of Mumbai</dd>
+
+        <dt><b>Wadala Road</b></dt>
+        <dd>Junction station connecting Harbour and Central lines</dd>
+
+        <dt><b>Kurla</b></dt>
+        <dd>Major interchange station for Harbour and Central Railway</dd>
+
+        <dt><b>Vashi</b></dt>
+        <dd>Important commercial center in Navi Mumbai</dd>
+
+        <dt><b>Belapur CBD</b></dt>
+        <dd>Central Business District of Navi Mumbai</dd>
+
+        <dt><b>Panvel</b></dt>
+        <dd>Major railway junction connecting suburban and long-distance trains</dd>
+    </dl>
+
+    <a href="route-map.html">Route Map</a>
+</body>
+</html>

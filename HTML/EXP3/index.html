@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CityPool</title>
+
+    <style>
+        .navbar{
+            background-color: #141a22;
+            text-align: center;
+            padding: 15px;
+            margin: 30px 0;
+            border-radius: 30px;
+        }
+
+        .nav-links a {
+            color: #dcdcdc;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Task 1 -->
+<script>
+    alert("Welcome to Smart City Transport Portal");
+    console.log("Welcome message displayed.");
+</script>
+
+<header style="background-color:#141a22;text-align:center;padding:40px;border-radius:12px;">
+    <h1 style="color:#ff4d4d;font-size:60px;">CITY POOL</h1>
+</header>
+
+<nav class="navbar">
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="route-card.html">Routes</a>
+        <a href="schedule-table.html">Schedules</a>
+        <a href="route-stops.html">Stops</a>
+        <a href="feedback-form.html">Feedback</a>
+        <a href="fare_cal.html">Ticket fare</a>
+    </div>
+</nav>
+
+<main>
+    <p>
+        The CityPool provides accurate and up-to-date public transportation information.
+    </p>
+
+    <p>
+        It helps users plan journeys efficiently with route details and schedules.
+    </p>
+</main>
+
+<!-- Task 2 -->
+<p id="datetime" style="text-align:center; font-size:22px; color:white;"></p>
+<script>
+    var now = new Date();
+    document.getElementById("datetime").innerHTML =
+        "Current Date & Time: " + now.toLocaleString();
+</script>
+
+
+<!-- Task 5 -->
+<p id="availability" style="text-align:center; font-size:22px;"></p>
+
+<script>
+    var currentHour = new Date().getHours();
+
+    if (currentHour >= 5 && currentHour <= 23) {
+        document.getElementById("availability").innerHTML =
+            "Bus Service is Available Now.";
+    } else {
+        document.getElementById("availability").innerHTML =
+            "Bus Service is Currently Closed.";
+    }
+</script>
+
+
+<footer style="text-align:center; padding:20px;">
+    <b>Copyright &copy; 2024 CityPool. All rights reserved.</b>
+</footer>
+
+
+
+</body>
+</html>

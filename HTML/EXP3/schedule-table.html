@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Transport Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table {
+            background-color: #1b222c;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        th {
+            background-color: #ff4d4d;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        td {
+            background-color: #141a22;
+            color: #ffffff;
+            font-size: 18px;
+            text-align: center;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mumbai Transport – Daily Schedule</h2>
+
+    <table border="1" id="scheduleTable">
+        <tr>
+            <th>Route</th>
+            <th>Stop</th>
+            <th>Arrival</th>
+            <th>Departure</th>
+        </tr>
+    </table>
+
+    <script>
+        var schedule = [
+            {route:"CSMT–PNVL", stop:"CSMT", arrival:"06:00 AM", departure:"06:05 AM"},
+            {route:"CSMT–PNVL", stop:"Kurla", arrival:"06:30 AM", departure:"06:35 AM"},
+            {route:"CSMT–PNVL", stop:"Vashi", arrival:"06:55 AM", departure:"06:57 AM"},
+            {route:"CSMT–PNVL", stop:"Panvel", arrival:"07:20 AM", departure:"07:25 AM"}
+        ];
+
+        var table = document.getElementById("scheduleTable");
+
+        for (var i = 0; i < schedule.length; i++) {
+            table.innerHTML +=
+                "<tr><td>" + schedule[i].route +
+                "</td><td>" + schedule[i].stop +
+                "</td><td>" + schedule[i].arrival +
+                "</td><td>" + schedule[i].departure +
+                "</td></tr>";
+        }
+    </script>
+
+
+    <a href="service-category.html">Service Categories</a>
+</body>
+</html>
