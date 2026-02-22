@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 class="page-title">Mumbai Transport – Citizen Feedback Form</h2>
+    <form class="feedback-form">
+        <label><b>Name:</b></label><br>
+        <input class="form-control" type="text" name="name"><br>
+
+        <label><b>Contact number:</b></label><br>
+        <input class="form-control" type="tel" name="contact"><br>
+
+        <label><b>Select Route:</b></label><br>
+        <select class="form-control" name="route" required>
+            <option value="">-- Select Route --</option>
+            <option value="csmt-panvel">CSMT to Panvel (Local Train)</option>
+            <option value="csmt-goregaon">CSMT to Goregaon (Local Train)</option>
+            <option value="csmt-thane">CSMT to Thane (Local Train)</option>
+        </select>
+
+        <label><b>Feedback:</b></label><br>
+        <textarea class="form-control" id="feedback" name="feedback" rows="4"></textarea><br>
+
+        <input class="btn-primary" type="submit" value="Submit">
+    </form>
+</body>
+</html>
