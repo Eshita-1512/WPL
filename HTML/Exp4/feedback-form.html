@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2 class="page-title">Passenger Feedback Form</h2>
+<form id="feedbackForm" class="feedback-form">
+
+    <label>Name *</label>
+    <input type="text" id="name" class="form-control">
+    <small class="error" id="nameError"></small>
+
+    <label>Email *</label>
+    <input type="text" id="email" class="form-control">
+    <small class="error" id="emailError"></small>
+
+    <label>Password *</label>
+    <input type="password" id="password" class="form-control">
+    <small class="error" id="passwordError"></small>
+
+    <label>Confirm Password *</label>
+    <input type="password" id="confirmPassword" class="form-control">
+    <small class="error" id="confirmError"></small>
+
+    <label>Feedback *</label>
+    <textarea id="feedback" class="form-control"></textarea>
+    <small class="error" id="feedbackError"></small>
+
+    <button type="submit" class="btn-primary">
+        Submit Feedback
+    </button>
+
+</form>
+
+<p id="successMessage" style="text-align:center; font-weight:bold;"></p>
+<script>
+
+document.getElementById("feedbackForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+    clearErrors();
+
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    var feedback = document.getElementById("feedback").value.trim();
+    var valid = true;
+
+    if (name === "") {
+        showError("name", "Name is required");
+        valid = false;
+    }
+    var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (email === "") {
+        showError("email", "Email is required");
+        valid = false;
+    } else if (!email.match(emailPattern)) {
+        showError("email", "Enter valid email address");
+        valid = false;
+    }
+    if (password.length < 6) {
+        showError("password", "Password must be at least 6 characters");
+        valid = false;
+    }
+    if (confirmPassword !== password) {
+        showError("confirmPassword", "Passwords do not match");
+        valid = false;
+    }
+    if (feedback === "") {
+        showError("feedback", "Feedback cannot be empty");
+        valid = false;
+    }
+
+    if (valid) {
+        document.getElementById("successMessage").innerHTML =
+            "Feedback Submitted Successfully!";
+    }
+});
+
+function showError(fieldId, message) {
+    document.getElementById(fieldId).style.border = "2px solid red";
+    document.getElementById(fieldId + "Error").innerHTML = message;
+    document.getElementById(fieldId + "Error").style.color = "red";
+}
+function clearErrors() {
+    var errors = document.getElementsByClassName("error");
+    for (var i = 0; i < errors.length; i++) {
+        errors[i].innerHTML = "";
+    }
+
+    var inputs = document.getElementsByClassName("form-control");
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].style.border = "";
+    }
+
+    document.getElementById("successMessage").innerHTML = "";
+}
+
+</script>
+
+</body>
+</html>

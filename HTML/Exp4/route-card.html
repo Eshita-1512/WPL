@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2 > Route Card </h2>
+        <!-- Task 3 -->
+        <button onclick="showRoute()" style="font-size:20px; background-color: #ff4d4d;">Show Bus Routes</button>
+
+        <!-- Task 8 -->
+        <button onclick="showRouteWithParam(98001)" style="font-size:20px; background-color: #6360fd;">
+            Show Route Using Parameter
+        </button>
+
+        <div id="routeDetails" style="font-size:25px; text-align:center;"></div>
+
+    </header>
+    <div class="card" >
+        <h3> Route Number:<b> 90001</b></h3>
+        <p >
+            <b>Source:</b> CSMT <br>
+            <b>Destination:</b> Panvel
+        </p>
+        <p>
+            <b>Total Stops:</b> 26
+        </p>
+        <p>
+            <b>Route Status:</b> Active
+        </p>
+        <p>
+            <b>Important Route:</b> High-frequency BEST train route connecting major residential <br>
+            and commercial areas during peak hours.
+        </p>
+
+    </div>
+    
+    <script>
+    // Task 3
+    function showRoute() {
+        document.getElementById("routeDetails").innerHTML =
+            "Route 98001: CSMT to Panvel - Total Stops: 26";
+    }
+
+    // Task 8
+    function showRouteWithParam(routeNumber) {
+        document.getElementById("routeDetails").innerHTML =
+            "Route " + routeNumber + ": CSMT - Panvel - Total Stops: 26";
+}
+    </script>
+
+   
+     
+
+
+    <a href="route-stops.html">View Route Stops</a>
+
+    
+</body>
+</html>
